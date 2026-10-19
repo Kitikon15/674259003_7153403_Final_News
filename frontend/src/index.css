@@ -1,0 +1,133 @@
+/* 1. Import Google Fonts: Prompt & Sarabun */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+/* 2. CSS Variables - Typography & Monochrome Luxury System */
+:root {
+  --font-body: 'Prompt', 'Sarabun', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --top-bar: #000000;
+  --primary-accent: #18181B;
+  --primary-hover: #27272A;
+  --hero-gradient: linear-gradient(135deg, #18181B 0%, #3F3F46 100%);
+  --badge-bg: #F4F4F5;
+  --badge-text: #18181B;
+  --body-bg: #F4F4F5;
+  --text-main: #334155;
+  --text-heading: #0f172a;
+}
+
+/* 3. Base Typography & Readability */
+body {
+  font-family: var(--font-body);
+  background-color: var(--body-bg);
+  color: var(--text-main);
+  line-height: 1.7;
+  letter-spacing: 0.25px;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings: line-height 1.4 - 1.5, font-weight 600, letter-spacing */
+h1, h2, h3, h4, h5, h6, .news-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+  color: var(--text-heading);
+}
+
+/* Paragraphs & Descriptions: line-height 1.6 - 1.8, comfortable spacing */
+p, .news-description, .news-summary {
+  font-family: var(--font-body);
+  line-height: 1.75;
+  letter-spacing: 0.3px;
+  color: #334155;
+}
+
+/* Smooth Inputs & Selects */
+input, select, textarea, button {
+  font-family: var(--font-body);
+  letter-spacing: 0.2px;
+}
+
+/* ============================================================== */
+/* 4. Hero Highlight Card - Crisp Typography & Contrast Overrides  */
+/* ============================================================== */
+
+/* พื้นหลังฝั่งข้อความ: สีเข้มสนิท #18181B (Charcoal Dark) */
+.hero-card-content {
+  background-color: #18181B !important;
+  background-image: none !important;
+}
+
+/* หัวข้อข่าวหลัก (Hero Title): สีขาวบริสุทธิ์ #FFFFFF, font-weight: 600, text-shadow บางๆ */
+.hero-card-content h2,
+.hero-card-title {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* รายละเอียดเนื้อหา (Hero Description/Summary): สีขาวอมเทาสว่าง #E2E8F0 (Slate 200) */
+.hero-card-content p,
+.hero-card-desc {
+  color: #E2E8F0 !important;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
+}
+
+/* ข้อความรอง (Meta Data: STORY ID, วันที่, ชื่อผู้รายงาน): สีเทาสว่าง #94A3B8 (Slate 400) */
+.hero-card-content .hero-meta-text,
+.hero-card-content [class*="font-mono"],
+.hero-card-content .hero-meta-text span,
+.hero-card-content .hero-meta-text div {
+  color: #94A3B8 !important;
+}
+
+/* ไอคอนทั้งหมดบน Hero Card: ปรับเป็นสี #94A3B8 ให้เข้ากัน */
+.hero-card-content svg,
+.hero-card-content .lucide {
+  color: #94A3B8 !important;
+  stroke: #94A3B8 !important;
+}
+
+/* ข้อยกเว้นสำหรับไอคอนในปุ่มกดแอคชันของ Hero Card ให้ใช้สีตามปุ่ม */
+.hero-card-content button svg,
+.hero-card-content button .lucide {
+  color: inherit !important;
+  stroke: currentColor !important;
+}
+
+/* Custom Scrollbar - Monochrome Minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
